@@ -111,11 +111,11 @@ const ProductList = () => {
         </div>
         <div>
           <Table>
-            <TableHeader>
+            <TableHeader className='bg-gray-200 font-extrabold'>
               <TableRow>
                 <TableHead>Id</TableHead>
                 <TableHead>Name</TableHead>
-                <TableHead className='text-right'>Price</TableHead>
+                <TableHead className='text-left'>Price</TableHead>
                 <TableHead>Category</TableHead>
                 <TableHead>Stock</TableHead>
                 <TableHead>Rating</TableHead>
@@ -133,7 +133,7 @@ const ProductList = () => {
                       {product.name}
                     </Link>
                   </TableCell>
-                  <TableCell className='text-right'>${product.price}</TableCell>
+                  <TableCell className='text-left'>${product.price}</TableCell>
                   <TableCell>{product.category}</TableCell>
                   <TableCell>{product.countInStock}</TableCell>
                   <TableCell>{product.avgRating}</TableCell>
@@ -168,7 +168,7 @@ const ProductList = () => {
             </TableBody>
           </Table>
           {(data?.totalPages ?? 0) > 1 && (
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-5 justify-center mt-4'>
               <Button
                 variant='outline'
                 onClick={() => handlePageChange('prev')}
