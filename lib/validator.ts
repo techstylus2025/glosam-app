@@ -203,6 +203,7 @@ export const UserNameSchema = z.object({
 
 // WEBPAGE
 export const WebPageInputSchema = z.object({
+  _id: z.string().optional(),
   title: z.string().min(3, 'Title must be at least 3 characters'),
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
   content: z.string().min(1, 'Content is required'),
@@ -210,5 +211,5 @@ export const WebPageInputSchema = z.object({
 })
 
 export const WebPageUpdateSchema = WebPageInputSchema.extend({
-  _id: z.string(),
+  _id: z.string().optional(),
 })
